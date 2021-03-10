@@ -36,6 +36,18 @@ module Match
                                          UI.user_error!("Unsupported environment #{value}, must be in #{Match.environments.join(', ')}")
                                        end
                                      end),
+        FastlaneCore::ConfigItem.new(key: :cert_path,
+                                     env_name: "MATCH_CERT_PATH",
+                                     description: "Define the profile type, can be #{Match.environments.join(', ')}",
+                                     optional: true),
+        FastlaneCore::ConfigItem.new(key: :p12_path,
+                                     env_name: "MATCH_P12_PATH",
+                                     description: "Define the profile type, can be #{Match.environments.join(', ')}",
+                                     optional: true),
+        FastlaneCore::ConfigItem.new(key: :profile_path,
+                                     env_name: "MATCH_PROFILE_PATH",
+                                     description: "Define the profile type, can be #{Match.environments.join(', ')}",
+                                     optional: true),
         FastlaneCore::ConfigItem.new(key: :additional_cert_types,
                                      env_name: "MATCH_ADDITIONAL_CERT_TYPES",
                                      description: "Create additional cert types needed for macOS installers (valid values: mac_installer_distribution, developer_id_installer)",
